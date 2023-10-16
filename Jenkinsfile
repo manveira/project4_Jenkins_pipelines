@@ -9,7 +9,7 @@ pipeline {
         stage('Clone') {
           steps {
             echo "cloning"
-            echo "repo"        
+            echo "repo 4"        
           }
 
         }
