@@ -1,30 +1,35 @@
 pipeline {
-  agent any 
-  stages {
-    stage('Clone') {
-      steps {
-        echo "cloning"
-        echo "repository"        
-      }
+    agent any
 
-    }
+    triggers {
+        pollSCM '* * * * *'
+    } 
 
-    stage('Build') {
-      steps {
-        echo "Building"
-      }      
-    }
+    stages {
+        stage('Clone') {
+          steps {
+            echo "cloning"
+            echo "repo"        
+          }
 
-    stage('Test') {
-      steps {
-        echo "Testing"
-      }      
-    }
+        }
 
-    stage('Deploy') {
-      steps {
-        echo "Applying"
-      }      
-    }            
-  } 
+        stage('Build') {
+          steps {
+            echo "Building"
+          }      
+        }
+
+        stage('Test') {
+          steps {
+            echo "Testing"
+          }      
+        }
+
+        stage('Deploy') {
+          steps {
+            echo "Applying"
+          }      
+        }            
+    } 
 }
