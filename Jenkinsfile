@@ -1,8 +1,11 @@
 pipeline {
     agent any
 
+    triggers {
+        pollSCM '* * * * *'
+    } 
+
     stages {
-      
         stage('Clone') {
           steps {
             echo "cloning"
