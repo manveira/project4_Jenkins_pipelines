@@ -4,6 +4,7 @@ pipeline {
     stage('Clone') {
       steps {
         echo "cloning"
+        echo "repository"        
       }
 
     }
